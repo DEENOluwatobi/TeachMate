@@ -1,15 +1,29 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react';
 import Leftpane from './Leftpane'
 import Rightpane from './Rightpane'
+import Home from './dash-inc/Home';
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<string>('home');
+
+  const renderPage = () => {
+    switch (currentPage) {
+        case 'home':
+            return <Home/>;         
+        default:
+            return null;
+    }
+};
+
+
   return (
-    <div className='grid grid-cols-6'>
+    <div className='grid grid-cols-6 h-screen w-full'>
         <div className='col-span-1'>
-            <Leftpane/>
+            <Leftpane setCurrentPage={setCurrentPage}/>
         </div>
         <div className='col-span-5'>
-            <Rightpane/>
+            <Rightpane>{renderPage()}</Rightpane>
         </div>
     </div>
   )

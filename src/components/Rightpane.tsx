@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
+import DashNav from './DashNav';
 
-const Rightpane = () => {
+interface RightPaneProps {
+  children: ReactNode;
+}
+
+const Rightpane: React.FC<RightPaneProps> = ({ children }) => {
   return (
-    <div>Rightpane</div>
+    <div>
+      <DashNav/>
+      <div className='p-2'>
+        {children}
+      </div>
+    </div>
   )
 }
 
