@@ -30,7 +30,7 @@
 }
 
 .gradient-bg{
-  background: -webkit-linear-gradient(top, rgba(187, 152, 237, 0.515) 0%, rgba(129, 200, 239, 0.583) 100%);
+  background: -webkit-linear-gradient(top, rgba(187, 152, 237, 0.354) 0%, rgba(129, 200, 239, 0.418) 100%);
 }
 
 /* Add some basic styling to the calendar container */
@@ -91,7 +91,7 @@
 
 /* Style the day names */
 .react-calendar__month-view__days__day--weekend {
-  color: #f38627; /* Adjust color for weekend days */
+  color: #bc66fa; /* Adjust color for weekend days */
 }
 
 /* Add space between the month name and navigation arrows */

@@ -17,7 +17,7 @@ const Dashboard: React.FC = () => {
   const renderPage = () => {
     switch (currentPage) {
         case 'home':
-            return <Home/>;
+            return <Home setCurrentPage={setCurrentPage}/>;
         case 'courses':
             return <Courses/>  
         case 'lessons':

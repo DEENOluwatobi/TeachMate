@@ -19,7 +19,7 @@ const data = [
   },
   {
     name: 'Wed',
-    Tasks: 3,
+    Tasks: 4,
     amt: 2000,
   },
   {
@@ -51,8 +51,8 @@ export default class HomeGraph extends PureComponent {
           margin={{
             top: 10,
             right: 20,
-            left: -10,
-            bottom: -30,
+            left: -28,
+            bottom: -5,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />

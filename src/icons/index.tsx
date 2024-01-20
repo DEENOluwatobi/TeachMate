@@ -189,3 +189,29 @@ const sizes = {
       <svg xmlns="http://www.w3.org/2000/svg" className={`${sizes[size]} ${className ? className : ""}`} width="25" height="25" viewBox="0 0 512 512" fill="" id="reward"><path d="M451,195C451,87.48,363.52,0,256,0S61,87.48,61,195a194.46,194.46,0,0,0,60,140.58V497a15,15,0,0,0,21.71,13.42L256,453.77l113.29,56.65A15,15,0,0,0,391,497V335.58A194.46,194.46,0,0,0,451,195ZM91,195c0-91,74-165,165-165s165,74,165,165S347,360,256,360,91,286,91,195ZM361,472.73l-98.29-49.15a15,15,0,0,0-13.42,0L151,472.73V359.25a194.64,194.64,0,0,0,210,0Z"></path><path d="M167.57,295.49a15,15,0,0,0,23.08,16.77L256,264.79l65.35,47.47a15,15,0,0,0,23.08-16.77l-25-76.82,65.35-47.47A15,15,0,0,0,376,144.06H295.23l-25-76.82a15,15,0,0,0-28.54,0l-25,76.82H136a15,15,0,0,0-8.82,27.14l65.35,47.47Zm14.6-121.43h45.5a15,15,0,0,0,14.27-10.36L256,120.42l14.06,43.28a15,15,0,0,0,14.27,10.36h45.5L293,200.81a15,15,0,0,0-5.45,16.77l14.06,43.28-36.81-26.75a15,15,0,0,0-17.64,0l-36.81,26.75,14.06-43.28A15,15,0,0,0,219,200.81Z"></path></svg>
     )
   }  
+
+  export const Board = ({ size = "original", className }: iconProp) => {
+    return(  
+      <svg xmlns="http://www.w3.org/2000/svg" className={`${sizes[size]} ${className ? className : ""}`} width="25" height="25" viewBox="0 0 52 52" id="board"><g fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"><path d="M10.984 19.654h5.428v13.509h-5.428zM23.286 15.26h5.428v17.903h-5.428zM35.588 10.317h5.428v22.846h-5.428z"></path><path d="M44.7 33.163H7.3A2.563 2.563 0 0 1 4.736 30.6V4.563A2.563 2.563 0 0 1 7.299 2h37.402a2.563 2.563 0 0 1 2.562 2.563V30.6a2.563 2.563 0 0 1-2.562 2.563zM39.675 50l-8.931-16.834M21.256 33.166 12.325 50M26 33.163V50"></path></g><g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"><path d="M10.984 19.654h5.428v13.509h-5.428zM23.286 15.26h5.428v17.903h-5.428zM35.588 10.317h5.428v22.846h-5.428z"></path><path d="M44.7 33.163H7.3A2.563 2.563 0 0 1 4.736 30.6V4.563A2.563 2.563 0 0 1 7.299 2h37.402a2.563 2.563 0 0 1 2.562 2.563V30.6a2.563 2.563 0 0 1-2.562 2.563zM39.675 50l-8.931-16.834M21.256 33.166 12.325 50M26 33.163V50"></path></g></svg>
+    )
+  }  
+
+  export const ArrowDown = ({ size = "original", className }: iconProp) => {
+    return( 
+      <svg className={`${sizes[size]} ${className ? className : ""}`} fill="none" stroke="#8884d8" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    )
+  } 
+
+  export const Calender = ({ size = "original", className }: iconProp) => {
+    return( 
+      <svg xmlns="http://www.w3.org/2000/svg" className={`${sizes[size]} ${className ? className : ""}`} fill="none" stroke="#8884d8"  data-name="Layer 1" viewBox="0 0 48 48" id="calender"><path d="M42,44H6V8H42ZM8,42H40V10H8Z"></path><path d="M38,40H10V14H38ZM12,38H36V16H12Z"></path><path d="M23 26H15V18h8zm-6-2h4V20H17zM33 26H25V18h8zm-6-2h4V20H27zM23 36H15V28h8zm-6-2h4V30H17zM33 36H25V28h8zm-6-2h4V30H27zM17.5 13A4.5 4.5 0 1122 8.5H20A2.5 2.5 0 1017.5 11zM30.5 13A4.5 4.5 0 1135 8.5H33A2.5 2.5 0 1030.5 11z"></path></svg>
+    )
+  } 
+
+  export const PlusCircle = ({ size = "original", className }: iconProp) => {
+    return( 
+      <svg xmlns="http://www.w3.org/2000/svg" className={`${sizes[size]} ${className ? className : ""}`} viewBox="0 0 24 24" id="plus"><g data-name="Layer 2"><g data-name="plus-circle"><rect width="24" height="24" opacity="0"></rect><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M15 11h-2V9a1 1 0 0 0-2 0v2H9a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2z"></path></g></g></svg>
+    )
+  } 
