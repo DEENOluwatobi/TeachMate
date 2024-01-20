@@ -3,12 +3,14 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import Link from 'next/link';
 import { Cog, Courses, HomeIcon, Play, Reward, Task } from '@/icons';
+import { useTheme } from '@/context/ThemeContext';
 
 interface LeftMenuProps {
   setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
+  const { theme } = useTheme();  
   const [currentPage, setCurrentPageLocal] = useState<string>('home');
 
   const handlePageChange = (page: string) => {
@@ -18,7 +20,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
 
 
   return (
-    <div className='bg-gray-100 h-full rounded-md p-2'>
+    <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'}  h-full rounded-md p-2 overflow-hidden`}>
         <div>
           <Image
             src={logo}
@@ -41,7 +43,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
           >
               {currentPage === 'home' && (
                   <span
-                      className="absolute -left-6 w-3 h-full rounded-lg"
+                      className="absolute -left-4 w-3 h-full rounded-lg"
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
@@ -61,7 +63,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
           >
               {currentPage === 'courses' && (
                   <span
-                      className="absolute -left-6 w-3 h-full rounded-lg"
+                      className="absolute -left-4 w-3 h-full rounded-lg"
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
@@ -81,7 +83,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
           >
               {currentPage === 'lessons' && (
                   <span
-                      className="absolute -left-6 w-3 h-full rounded-lg"
+                      className="absolute -left-4 w-3 h-full rounded-lg"
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
@@ -101,7 +103,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
           >
               {currentPage === 'task' && (
                   <span
-                      className="absolute -left-6 w-3 h-full rounded-lg"
+                      className="absolute -left-4 w-3 h-full rounded-lg"
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
@@ -121,7 +123,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
           >
               {currentPage === 'rewards' && (
                   <span
-                      className="absolute -left-6 w-3 h-full rounded-lg"
+                      className="absolute -left-4 w-3 h-full rounded-lg"
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
@@ -141,7 +143,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
           >
               {currentPage === 'settings' && (
                   <span
-                      className="absolute -left-6 w-3 h-full rounded-lg"
+                      className="absolute -left-4 w-3 h-full rounded-lg"
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}

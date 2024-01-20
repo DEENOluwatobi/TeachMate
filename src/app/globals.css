@@ -32,6 +32,9 @@
 .gradient-bg{
   background: -webkit-linear-gradient(top, rgba(187, 152, 237, 0.354) 0%, rgba(129, 200, 239, 0.418) 100%);
 }
+.dark-gradient-bg{
+  background: -webkit-linear-gradient(top, rgba(51, 11, 107, 0.926) 0%, rgb(3, 84, 128) 100%);
+}
 
 /* Add some basic styling to the calendar container */
 .react-calendar {

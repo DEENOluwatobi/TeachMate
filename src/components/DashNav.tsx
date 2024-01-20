@@ -3,10 +3,13 @@ import { BellIcon, EmailsIcon, GearIcon, GiftBoxIcon, SearchIcon } from '@/icons
 import Image from 'next/image'
 import { man } from '@/images'
 import ThemeBtn from './ThemeBtn'
+import { useTheme } from '@/context/ThemeContext';
 
 const DashNav = () => {
+  const { theme } = useTheme();  
+
   return (
-    <div className='w-full flex p-2 bg-gray-100 rounded-md'>
+    <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'} w-full flex p-2 bg-gray-100 rounded-md`}> 
         <div className='flex-grow p-3 flex justify-between bg-white rounded-lg'>
             <input className='w-full h-full outline-none text-sm font-barlow' type="text" placeholder='Search here'/> 
             <SearchIcon className='cursor-pointer hover:[&>path]:fill-[#f14646]'/>
