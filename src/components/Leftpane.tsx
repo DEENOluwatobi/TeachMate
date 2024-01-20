@@ -20,7 +20,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
 
 
   return (
-    <div className='bg-gray-100 h-full'>
+    <div className='bg-gray-100 h-full rounded-md'>
         <div>
           <Image
             src={logo}

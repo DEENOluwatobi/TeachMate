@@ -2,11 +2,12 @@ import React from 'react'
 import { BellIcon, EmailsIcon, GearIcon, GiftBoxIcon, SearchIcon } from '@/icons'
 import Image from 'next/image'
 import { man } from '@/images'
+import ThemeBtn from './ThemeBtn'
 
 const DashNav = () => {
   return (
-    <div className='w-full flex p-2 bg-gray-100 '>
-        <div className='w-[57%] p-3 flex justify-between bg-white rounded-lg'>
+    <div className='w-full flex p-2 bg-gray-100 rounded-md'>
+        <div className='flex-grow p-3 flex justify-between bg-white rounded-lg'>
             <input className='w-full h-full outline-none text-sm font-barlow' type="text" placeholder='Search here'/> 
             <SearchIcon className='cursor-pointer hover:[&>path]:fill-[#f14646]'/>
         </div>
@@ -36,9 +37,12 @@ const DashNav = () => {
                     34
                 </span>
             </div>
+            <div className='bg-[#753ffe88] w-10 h-full flex justify-center items-center rounded-2xl cursor-pointer'>
+                <ThemeBtn/>
+            </div>
         </div>
 
-        <div className='ml-auto flex justify-end items-center gap-2'>
+        <div className='ml-auto flex justify-end items-center gap-2 px-2'>
             <span className='font-barlow text-sm text-gray-600'>Hello, Tobi</span>
             <div className='rounded-full'>
                 <Image 

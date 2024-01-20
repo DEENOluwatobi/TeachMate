@@ -18,7 +18,7 @@ const Dashboard: React.FC = () => {
 
 
   return (
-    <div className='grid grid-cols-6 h-screen w-full'>
+    <div className='grid grid-cols-6 h-screen w-full p-2 gap-2'>
         <div className='col-span-1'>
             <Leftpane setCurrentPage={setCurrentPage}/>
         </div>
