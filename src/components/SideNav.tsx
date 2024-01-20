@@ -1,8 +1,11 @@
 import React from 'react'
+import Calender from './side-inc/Calender'
 
 const SideNav = () => {
   return (
-    <div>SideNav</div>
+    <div>
+      <Calender/>
+    </div>
   )
 }
 

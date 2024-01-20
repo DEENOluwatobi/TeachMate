@@ -23,20 +23,95 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.gradient-bg{
+  background: -webkit-linear-gradient(top, rgba(187, 152, 237, 0.515) 0%, rgba(129, 200, 239, 0.583) 100%);
+}
+
+/* Add some basic styling to the calendar container */
+.react-calendar {
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 6px;
+  font-size: .8em;
+}
+
+/* Style the navigation buttons */
+.react-calendar__navigation {
+  background-color: #f0f0f0;
+  color: #7B68EE;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1px;
+}
+
+/* Style the days */
+.react-calendar__tile {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1em;
+  border: 1px solid rgba(187, 152, 237, 0.515);
+  width: 10px;
+  height: 30px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Style the selected day */
+.react-calendar__tile--active {
+  background-color: #7B68EE;
+  color: #fff !important; 
+}
+
+/* Style the days of the week */
+.react-calendar__month-view__weekdays {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 2px solid #f49440df;
+  color: #fff;
+  font-size: .8em;
+  margin: 5px 0
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  flex: 1;
+  text-align: center;
+  color: #535255;
+}
+
+/* Style the day names */
+.react-calendar__month-view__days__day--weekend {
+  color: #f38627; /* Adjust color for weekend days */
+}
+
+/* Add space between the month name and navigation arrows */
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style the navigation arrows */
+.react-calendar__navigation__arrow {
+  margin: 0 10px; /* Adjust the margin as needed */
+  font-size: 2em;
+  
+}
+
+/* Style the month label */
+.react-calendar__navigation__label {
+  font-size: 1em; /* Adjust the font size as needed */
+  font-weight: bold;
 }
 
 

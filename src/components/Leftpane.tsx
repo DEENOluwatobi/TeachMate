@@ -8,7 +8,6 @@ interface LeftMenuProps {
   setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
 }
 
-
 const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
   const [currentPage, setCurrentPageLocal] = useState<string>('home');
 
@@ -146,7 +145,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
-              <Cog size='sm' className={currentPage === 'settings' ? 'stroke-[#7B68EE]' : 'stroke-[#464444]'} />
+              <Cog size='sm' className={`${currentPage === 'settings' ? 'stroke-[#7B68EE]' : 'stroke-[#464444]'} ml-[2px]`}/>
               Settings
           </Link>
 
