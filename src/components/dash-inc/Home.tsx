@@ -112,7 +112,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
               <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Board className='[&>g]:stroke-[#7a64f1]'/></div>
               <div className='flex flex-col leading-4'>
                 <span className='font-poppins text-[1em] mt-1 font-medium text-secondaryColor'>Task Collaboration</span>
-                <span className='text-[.7em] font-poppins text-gray-600'>Team's work</span>
+                <span className='text-[.7em] font-poppins text-gray-600'>Team&apos;s work</span>
               </div>
             </div>
 
