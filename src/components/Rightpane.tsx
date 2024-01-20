@@ -11,8 +11,8 @@ const Rightpane: React.FC<RightPaneProps> = ({ children }) => {
     <div className='flex flex-col gap-2 h-full'>
       <DashNav/>
 
-      <div className='grid grid-cols-4 h-full gap-2'>
-        <div className='col-span-3 p-2 h-full bg-gray-100 rounded-md'>
+      <div className='grid grid-cols-4 h-full gap-2 overflow-y-scroll'>
+        <div className='col-span-3 h-full'>
           {children}
         </div>
 

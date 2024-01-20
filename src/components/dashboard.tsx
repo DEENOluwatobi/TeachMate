@@ -31,8 +31,7 @@ const Dashboard: React.FC = () => {
         default:
             return null;
     }
-};
-
+  };
 
   return (
     <div className={`${theme === 'dark' ? 'bg-gray-400' : 'gradient-bg'} grid grid-cols-6 h-screen w-full p-2 gap-2`}>
