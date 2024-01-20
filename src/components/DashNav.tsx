@@ -46,7 +46,7 @@ const DashNav = () => {
             <span className='font-barlow text-sm text-gray-600'>Hello, Tobi</span>
             <div className='rounded-full'>
                 <Image 
-                  className='w-11 h-11 rounded-full border-[2px] border-white object-fill' 
+                  className='w-11 h-11 rounded-full border-[2px] border-white object-cover' 
                   src={man} 
                   alt='user-profile-pic'
                 />

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&family=Ubuntu:wght@400;500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,6 +15,12 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+.font-barlow{
+  font-family: 'Barlow',  sans-serif;
+}
+.font-poppins{
+  font-family: 'Poppins', sans-serif;
 }
 
 /* body {

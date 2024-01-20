@@ -7,9 +7,9 @@ interface RightPaneProps {
 
 const Rightpane: React.FC<RightPaneProps> = ({ children }) => {
   return (
-    <div>
+    <div className='flex flex-col gap-2'>
       <DashNav/>
-      <div className='p-2'>
+      <div className='p-2 h-full bg-gray-100 rounded-md'>
         {children}
       </div>
     </div>
