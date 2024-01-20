@@ -2,7 +2,7 @@ import { logo } from '@/images'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Link from 'next/link';
-import { Cog, Courses, HomeIcon, Task } from '@/icons';
+import { Cog, Courses, HomeIcon, Play, Reward, Task } from '@/icons';
 
 interface LeftMenuProps {
   setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
@@ -71,6 +71,26 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
           </Link>
 
           <Link
+              href="#lessons"
+              onClick={() => handlePageChange('lessons')}
+              className='flex gap-2 items-center px-2 py-3 rounded-lg font-barlow relative'
+              style={{
+                  backgroundColor: currentPage === 'lessons' ? '#D8BFFF' : 'transparent',
+                  color: currentPage === 'lessons' ? '#7B68EE' : '#000',
+                  fontWeight: currentPage === 'lessons' ? '600' : '400',
+              }}
+          >
+              {currentPage === 'lessons' && (
+                  <span
+                      className="absolute -left-6 w-3 h-full rounded-lg"
+                      style={{ backgroundColor: '#7B68EE' }}
+                  ></span>
+              )}
+              <Play size='sm' className={`${currentPage === 'lessons' ? 'fill-[#7B68EE]' : 'fill-[#787777]'} `} />
+              Lessons
+          </Link>
+
+          <Link
               href="#task"
               onClick={() => handlePageChange('task')}
               className='flex gap-2 items-center px-2 py-3 rounded-lg font-barlow relative'
@@ -106,7 +126,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
-              <HomeIcon size='sm' className={currentPage === 'rewards' ? '[&>path]:stroke-[#7B68EE]' : '[&>path]:stroke-[#464444]'} />
+              <Reward size='sm' className={`${currentPage === 'rewards' ? 'fill-[#7B68EE]' : 'fill-[#646262]'} `} />
               Rewards
           </Link>
 
