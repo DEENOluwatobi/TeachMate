@@ -8,11 +8,11 @@ interface RightPaneProps {
 
 const Rightpane: React.FC<RightPaneProps> = ({ children }) => {
   return (
-    <div className='flex flex-col gap-2 h-full'>
+    <div className='relative flex flex-col gap-2 h-full'>
       <DashNav/>
 
-      <div className='grid grid-cols-4 h-full gap-2 overflow-y-scroll'>
-        <div className='col-span-3 h-full'>
+      <div className='grid grid-cols-4 h-full gap-2'>
+        <div className='col-span-3 h-[calc(100vh-5.5em)] overflow-y-scroll rounded-md scroll-smooth'>
           {children}
         </div>
 

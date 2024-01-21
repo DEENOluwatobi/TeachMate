@@ -4,6 +4,7 @@ import HomeGraph from '../charts/HomeGraph'
 import { ArrowDown, Board, Calender, FileAssign, FileComplete, FileUncomplete, PlusCircle, Team } from '@/icons'
 import Link from 'next/link'
 import { useTheme } from '@/context/ThemeContext'
+import Collab from '../inc/Collab'
 
 interface HomeProps {
   setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
@@ -104,7 +105,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
         </div>
       </div>
 
-      <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'} p-2 bg-gray-100 rounded-md overflow-hidden w-full h-full`}>
+      <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'} p-2 bg-gray-100 rounded-md overflow-hidden w-full h-full flex flex-col gap-2`}>
 
         <div className='w-full flex justify-between items-center px-2'>
 
@@ -129,8 +130,8 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
 
         <div className='bg-white bg-opacity-60 rounded-lg shadow-md w-full h-[2px] '></div>
 
-        <div>
-          
+        <div className='w-full'>
+            <Collab/>
         </div>
       </div>
     </div>

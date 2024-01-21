@@ -30,7 +30,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
           />
         </div>
 
-        <div className='flex flex-col text-[13px] gap-2 mt-5 '>
+        <div className='flex flex-col text-[14px] gap-2 mt-5 '>
           <Link
               href="#home"
               onClick={() => handlePageChange('home')}
