@@ -71,8 +71,8 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
 
           <div className='grid grid-cols-3 gap-4 px-4 h-full pt-3 pb-5'>
 
-            <div className='bg-primaryColor h-full w-full shadow-sm shadow-gray-300 rounded-xl bg-opacity-70 flex justify-center gap-4 items-center flex-col py-4 px-2'>
-              <div className='bg-white bg-opacity-60 p-4 rounded-lg shadow-md w-14 h-14 flex justify-center items-center'>
+            <div className='bg-primaryColor h-full w-full shadow-sm shadow-gray-300 rounded-xl bg-opacity-90 flex justify-center gap-4 items-center flex-col py-4 px-2'>
+              <div className='bg-white bg-opacity-70 p-4 rounded-lg shadow-md w-14 h-14 flex justify-center items-center'>
                 <FileUncomplete className='[&>path]:fill-[#3d28b5] w-10 h-10' size='lg'/>
               </div>
               <div className='flex flex-col justify-center items-center text-white font-barlow'>
@@ -81,8 +81,8 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
               </div>
             </div>
 
-            <div className='bg-secondaryColor h-full w-full shadow-sm shadow-gray-300 rounded-xl bg-opacity-70 flex justify-center gap-4 items-center flex-col'>
-              <div className='bg-white bg-opacity-60 p-4 rounded-lg shadow-md w-14 h-14 flex justify-center items-center'>
+            <div className='bg-secondaryColor h-full w-full shadow-sm shadow-gray-300 rounded-xl bg-opacity-90 flex justify-center gap-4 items-center flex-col'>
+              <div className='bg-white bg-opacity-70 p-4 rounded-lg shadow-md w-14 h-14 flex justify-center items-center'>
                 <FileAssign className='[&>path]:fill-[#3d28b5] w-10 h-10' size='lg'/>
               </div>
               <div className='flex flex-col justify-center items-center text-white font-barlow'>
@@ -91,8 +91,8 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
               </div>
             </div>
 
-            <div className='bg-tertiaryColor h-full w-full shadow-sm shadow-gray-300 rounded-xl bg-opacity-70 flex justify-center gap-4 items-center flex-col'>
-              <div className='bg-white bg-opacity-60 p-4 rounded-lg shadow-md w-14 h-14 flex justify-center items-center'>
+            <div className='bg-tertiaryColor h-full w-full shadow-sm shadow-gray-300 rounded-xl bg-opacity-90 flex justify-center gap-4 items-center flex-col'>
+              <div className='bg-white bg-opacity-70 p-4 rounded-lg shadow-md w-14 h-14 flex justify-center items-center'>
                 <FileComplete className='[&>path]:fill-[#3d28b5] w-10 h-10' size='lg'/>
               </div>
               <div className='flex flex-col justify-center items-center text-white font-barlow'>

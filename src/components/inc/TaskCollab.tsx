@@ -15,7 +15,7 @@ interface CollabData {
   friends: StaticImageData[];
 }
 
-const Collab: React.FC = () => {
+const TaskCollab: React.FC = () => {
   const collabs: CollabData[] = [
     {
       image: javascript,
@@ -45,24 +45,14 @@ const Collab: React.FC = () => {
       notificationNumber: 8,
       friends: [woman, eye, man, man2],
     },
-
-    {
-      image: design,
-      title: 'Design Project',
-      category: 'Design - Collaborate',
-      daysUsed: 8,
-      totalDays: 20,
-      notificationNumber: 9,
-      friends: [man, man2, girl, eye],
-    },
   ];
 
   return (
-    <div className='grid grid-cols-2 px-4 gap-6'>
+    <div className='grid grid-cols-3  gap-2'>
       {collabs.map((collab, index) => (
         <div key={index}>
-            <div className='w-full p-8 bg-slate-200 rounded-lg border border-primaryLight'>
-                <div className='h-[13em] mb-2'>
+            <div className='w-full p-2 bg-white rounded-lg border border-primaryLight'>
+                <div className='h-[8em] mb-2'>
                     <Image
                         src={collab.image}
                         className='w-full h-full object-cover cursor-pointer rounded-md '
@@ -74,8 +64,8 @@ const Collab: React.FC = () => {
 
                 <div className='flex justify-between items-center gap-2'>
                     <div className='flex flex-col leading-5'>
-                        <span className='font-poppins text-[1em] mt-1 font-medium text-secondaryColor'>{collab.title}</span>
-                        <span className='text-[.8em] font-poppins text-gray-600'>{collab.category}</span>
+                        <span className='font-poppins text-[.7em] mt-1 font-medium text-secondaryColor'>{collab.title}</span>
+                        <span className='text-[.6em] font-poppins text-gray-600'>{collab.category}</span>
                     </div>
 
                     <div className='cursor-pointer'>
@@ -134,4 +124,4 @@ const Collab: React.FC = () => {
   );
 };
 
-export default Collab;
+export default TaskCollab;
