@@ -1,4 +1,4 @@
-import { logo } from '@/images'
+import { tmate } from '@/images'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Link from 'next/link';
@@ -21,13 +21,15 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
 
   return (
     <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'}  h-full rounded-md p-2 overflow-hidden`}>
-        <div>
+        <div className='flex justify-start items-center py-2'>
           <Image
-            src={logo}
-            width={100}
-            height={10}
+            src={tmate}
+            // width={100}
+            // height={10}
+            className='w-10 h-10'
             alt='logo'
           />
+          <span className='font-poppins font-medium text-lg text-blue-950'>Teachmate AI</span>
         </div>
 
         <div className='flex flex-col text-[14px] gap-2 mt-5 '>

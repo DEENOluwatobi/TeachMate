@@ -8,5 +8,6 @@ import woman from "./woman.jpeg";
 import man2 from "./man.jpeg";
 import javascript from "./javascript.jpeg";
 import student from "./student.jpeg";
+import tmate from "./tmate.png"
 
-export { logo, man, design, eye, js, woman, girl, man2, javascript, student };
+export { logo, man, design, eye, js, woman, girl, man2, javascript, student, tmate };
