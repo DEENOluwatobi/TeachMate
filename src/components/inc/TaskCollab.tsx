@@ -69,7 +69,7 @@ const TaskCollab: React.FC = () => {
                     </div>
 
                     <div className='cursor-pointer'>
-                        <DotMenu />
+                        <DotMenu size='md'/>
                     </div>
                 </div>
 
@@ -82,20 +82,19 @@ const TaskCollab: React.FC = () => {
                     <p className='text-[.7em] text-primaryColor'> {collab.totalDays - collab.daysUsed} days left</p>
                 </div>
 
-                <div className='w-full'>
+                <div className='w-full mb-1'>
                     <input 
                       type="range" 
                       name="" 
                       id="" 
                       value={collab.daysUsed} 
                       max= {collab.totalDays} 
-                      className='w-full h-[2px] rounded-md '
-                      
+                      className='w-full h-[2px] rounded-md'                     
                     />
                 </div>
 
                 <div className='flex justify-between items-center w-full'>
-                    <div className='flex items-center gap-3 w-full'>
+                    <div className='flex items-center gap-2 w-full'>
                         <div className='flex justify-center items-center gap-[1px] cursor-pointer'>
                           <Chat className='cursor-pointer [&>path]:fill-[#1370db]' size='md'/>
                           <span className='text-[.7em] text-[#1370db]'>{collab.notificationNumber}</span>

@@ -141,6 +141,9 @@ body {
   font-weight: bold;
 }
 
-
+td{
+  place-items: center;
+  border: 1px solid red;
+}
 
 
