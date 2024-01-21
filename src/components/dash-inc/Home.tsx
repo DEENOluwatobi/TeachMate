@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import HomeGraph from '../charts/HomeGraph'
-import { ArrowDown, Board, Calender, FileAssign, FileComplete, FileUncomplete, PlusCircle } from '@/icons'
+import { ArrowDown, Board, Calender, FileAssign, FileComplete, FileUncomplete, PlusCircle, Team } from '@/icons'
 import Link from 'next/link'
 import { useTheme } from '@/context/ThemeContext'
 
@@ -23,7 +23,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
       <div className='grid grid-cols-2 gap-2'>
         <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'} w-full h-[20em] gap-2 flex flex-col justify-center items-center p-2 bg-gray-100 rounded-md overflow-hidden`}>
           
-          <div className='w-full flex justify-between items-center px-6'>
+          <div className='w-full flex justify-between items-center px-2'>
             <div className='flex justify-center items-center gap-1 shadow-sm shadow-gray-300 rounded-md p-2'>
               <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Board className='[&>g]:stroke-[#7a64f1]'/></div>
               <div className='flex flex-col leading-4'>
@@ -48,9 +48,9 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
         </div>
 
         <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'} p-2 h-full bg-gray-100 rounded-md flex flex-col gap-4 pb-4`}>
-          <div className='w-full flex justify-between items-center px-6'>
+          <div className='w-full flex justify-between items-center px-2'>
             <div className='flex justify-center items-center gap-1 shadow-sm shadow-gray-300 rounded-md p-2'>
-              <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Calender size='lg' className='[&>g]:stroke-[#7a64f1]'/></div>
+              <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Calender size='mid' className='[&>g]:stroke-[#7a64f1]'/></div>
               <div className='flex flex-col leading-4'>
                 <span className='font-poppins text-[1em] mt-1 font-medium text-secondaryColor'>Progress Task</span>
                 <span className='text-[.7em] font-poppins text-gray-600'>Progress details</span>
@@ -106,20 +106,30 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
 
       <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'} p-2 bg-gray-100 rounded-md overflow-hidden w-full h-full`}>
 
-        <div className='w-full flex justify-between items-center px-6'>
+        <div className='w-full flex justify-between items-center px-2'>
 
             <div className='flex justify-center items-center gap-1 shadow-sm shadow-gray-300 rounded-md p-2'>
-              <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Board className='[&>g]:stroke-[#7a64f1]'/></div>
+              <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Team size='mid' className='fill-[#7a64f1]'/></div>
               <div className='flex flex-col leading-4'>
                 <span className='font-poppins text-[1em] mt-1 font-medium text-secondaryColor'>Task Collaboration</span>
                 <span className='text-[.7em] font-poppins text-gray-600'>Team&apos;s work</span>
               </div>
             </div>
 
-            <div>
-              <span></span>
-              <span></span>
+            <div className='flex gap-1'>
+              <span className='bg-white bg-opacity-60 rounded-lg shadow-md w-9 h-9 flex justify-center items-center cursor-pointer'>
+                <ArrowDown className='w-5 h-5 rotate-90'/>
+              </span>
+              <span className='bg-white bg-opacity-60 rounded-lg shadow-md w-9 h-9 flex justify-center items-center cursor-pointer'>
+              <ArrowDown className='w-5 h-5 rotate-[270deg]'/>
+              </span>
             </div>
+          
+        </div>
+
+        <div className='bg-white bg-opacity-60 rounded-lg shadow-md w-full h-[2px] '></div>
+
+        <div>
           
         </div>
       </div>
