@@ -21,8 +21,7 @@ const TaskList: React.FC = () => {
     const menuRef = useRef<HTMLDivElement | null>(null);
     const [ menu, setMenu ] =  useState<number | null>(null);
     const [ addTask, setAddTask ] = useState(false);
-    const [ editTask, setEditTask ] = useState(false);
-    const [markTask, setMarkTask] = useState<'pending' | 'completed'>('pending');
+    // const [markTask, setMarkTask] = useState<'pending' | 'completed'>('pending');
     const [ title, setTitle] = useState('');
     const [ desc, setDesc] = useState('');
     const [isActive, setIsActive] = useState(false);
@@ -96,6 +95,46 @@ const TaskList: React.FC = () => {
       
     ];
 
+    const [ editTask, setEditTask ] = useState(Array(tasks.length).fill(false));
+    const [ deleteTask, setDeleteTask ] = useState(Array(tasks.length).fill(false));
+    const [ markTask, setMarkTask ] = useState(Array(tasks.length).fill(false));
+
+    const openModal = (index: number) => {
+      const newOpenTasks = [...editTask];
+      newOpenTasks[index] = true;
+      setEditTask(newOpenTasks);
+    };
+
+    const closeModal = (index: number) => {
+      const newOpenTasks = [...editTask];
+      newOpenTasks[index] = false;
+      setEditTask(newOpenTasks);
+    };
+
+    const openDeleteModal = (index: number) => {
+      const newDeleteTasks = [...deleteTask];
+      newDeleteTasks[index] = true;
+      setDeleteTask(newDeleteTasks);
+    };
+
+    const closeDeleteModal = (index: number) => {
+      const newDeleteTasks = [...deleteTask];
+      newDeleteTasks[index] = false;
+      setDeleteTask(newDeleteTasks);
+    };
+
+    const openMarkModal = (index: number) => {
+      const newMarkTasks = [...markTask];
+      newMarkTasks[index] = true;
+      setMarkTask(newMarkTasks);
+    };
+
+    const closeMarkModal = (index: number) => {
+      const newMarkTasks = [...markTask];
+      newMarkTasks[index] = false;
+      setMarkTask(newMarkTasks);
+    };
+
     //  const tasks = useSelector(selectTasks) || task;
 
   return (
@@ -149,8 +188,7 @@ const TaskList: React.FC = () => {
                             <label htmlFor="text" className={`${isDescActive ? "active" : ""} `}>Description</label>
                         </div> 
 
-
-                        <div className='w-full flex justify-between items-center border-[2px] py-2 px-2 rounded-md gap-2'>
+                        <div className='w-full flex justify-between items-center border-[2px] py-2 px-2 rounded-lg gap-2'>
                           <label className='text-[.95em] text-primaryColor'>Date</label>
                           <DatePicker 
                             onChange={DateChange} 
@@ -158,8 +196,6 @@ const TaskList: React.FC = () => {
                           />
                         </div>
                       </div>
-
-
                       <button
                         type="submit"
                         className="w-full origin-center rounded-3xl bg-primaryColor px-4 py-1 text-center text-base font-semibold capitalize text-white shadow-md transition duration-200 ease-in hover:bg-opacity-60 focus:outline-none  focus:ring-2 active:scale-95 md:px-10 md:py-3 lg:px-16"
@@ -171,7 +207,6 @@ const TaskList: React.FC = () => {
                 </Modal>
               )
             }
-
 
       </div>
         
@@ -194,50 +229,123 @@ const TaskList: React.FC = () => {
                             <td>{task.title}</td>
                             <td>{task.description}</td>
                             <td>{task.dueDate}</td>
-                            <td className={`${task.status === 'pending' ? 'text-orange-400' : 'text-green-500'} `}>{task.status}</td>
+                            <td className={`${task.status === 'pending' ? 'text-orange-400' : 'text-green-500'} capitalize`}>{task.status}</td>
                             <td className='relative' key={task.id} onClick={() => handleMenuClick(index)}>
                               <DotMenu 
                                 className='rotate-90 fill-[#7a64f1] cursor-pointer' 
                                 size='md'
                               />
+                              <div>
+                                {
+                                  menu === index && (
+                                    <motion.div
+                                      initial={{ opacity: 0, translateX: "-10%", translateY: "-10%", }}
+                                      animate={{ opacity: 1,translateX: "-10%",translateY: "-110%", }} 
+                                      exit={{ opacity: 0, translateX: "-10%", translateY: "-10%" }}
+                                      key={task.id} 
+                                      className='flex flex-col justify-center items-start gap-1 absolute w-[7em] right-0 border-[1px] bg-white shadow-md rounded-md p-2 '
+                                    >
+                                        <span onClick={() => openModal(index)} className='flex justify-start items-center gap-2 cursor-pointer bg-gray-100 hover:bg-gray-200 duration-300 transition-all ease-in-out w-full rounded-md p-1'>
+                                          <Edit className='fill-[#7a64f1]'/>
+                                          Edit
+                                        </span>
 
+                                        <span className='flex justify-start items-center gap-2 cursor-pointer bg-gray-100 hover:bg-gray-200 duration-300 transition-all ease-in-out w-full rounded-md p-1'>
+                                          <Delete className='fill-[#f01a1a]'/>
+                                          Delete
+                                        </span>
+
+                                        <span className='flex justify-start items-center gap-2 cursor-pointer bg-gray-100 hover:bg-gray-200 duration-300 transition-all ease-in-out w-full rounded-md p-1'>
+                                          <Mark className='fill-[#53ce0b]'/>
+                                          Mark
+                                        </span>
+
+                                        <span 
+                                          onClick={() => handleMenuClick(index)}
+                                          className='absolute -top-1 -right-1 cursor-pointer shadow-sm shadow-secondaryLight rounded-full w-4 h-4 flex justify-center items-center font-medium pb-[2px] text-white bg-red-500'
+                                        >
+                                          x
+                                        </span>
+                                    </motion.div>
+                                  )
+                                }
+                              </div>
+                            </td>
+
+                            <div>
                               {
-                                menu === index && (
+                                editTask[index] && (
                                   <motion.div
-                                    initial={{ opacity: 0, translateX: "-10%", translateY: "-10%", }}
-                                    animate={{ opacity: 1,translateX: "-10%",translateY: "-110%", }} 
-                                    exit={{ opacity: 0, translateX: "-10%", translateY: "-10%" }}
-                                    key={task.id} 
-                                    className='flex flex-col justify-center items-start gap-1 absolute w-[7em] right-0 border-[1px] bg-white shadow-md rounded-md p-2 '
+                                    className="fixed top-0 left-0 z-[110] h-full w-full overflow-y-auto overflow-x-hidden bg-gray-800/30 "
+                                    onClick={() => closeModal(index)}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
                                   >
-                                      <span className='flex justify-start items-center gap-2 cursor-pointer bg-gray-100 hover:bg-gray-200 duration-300 transition-all ease-in-out w-full rounded-md p-1'>
-                                        <Edit className='fill-[#7a64f1]'/>
-                                        Edit
-                                      </span>
+                                    <motion.div
+                                      initial={{opacity: 0, translateX: '-50%', translateY: '-30%' }}
+                                      animate={{opacity: 1, translateX: '-50%', translateY: '-50%' }}
+                                      exit={{ opacity: 0, translateX: '-50%', translateY: '-30%' }}
+                                      className="relative -bottom-[250px] md:top-1/2 bg-white p-2 rounded-md left-1/2 w-[22rem] md:max-w-lg -translate-x-1/2 -translate-y-1/2"
+                                      onClick={(e) => e.stopPropagation()}
+                                    >
+                                      <div className='flex items-center gap-1'>
+                                        <Edit className='w-8 h-8 fill-primaryColor'/>
+                                        <span className='text-secondaryColor font-barlow text-[1em] font-medium'>Edit Task</span>
+                                      </div>
 
-                                      <span className='flex justify-start items-center gap-2 cursor-pointer bg-gray-100 hover:bg-gray-200 duration-300 transition-all ease-in-out w-full rounded-md p-1'>
-                                        <Delete className='fill-[#f01a1a]'/>
-                                        Delete
-                                      </span>
+                                      <div className='p-2 border-[1px] border-secondaryLight border-opacity-50 rounded-lg flex-col flex gap-2'>
+                                        <div className="poll-label relative">
+                                            <input
+                                                id="title"
+                                                type="text"
+                                                value={task.title}
+                                                className={`relative flex items-center overflow-hidden w-full border-[2px] py-2 px-1 text-sm focus-within:border-primaryColor rounded-lg md:py-3 md:px-2 outline-none bg-transparent`}
+                                              />
+                                        </div> 
 
-                                      <span className='flex justify-start items-center gap-2 cursor-pointer bg-gray-100 hover:bg-gray-200 duration-300 transition-all ease-in-out w-full rounded-md p-1'>
-                                        <Mark className='fill-[#53ce0b]'/>
-                                        Mark
-                                      </span>
+                                        <div className="poll-label relative">
+                                            <input
+                                                id="desc"
+                                                type="text"
+                                                value={task.description}
+                                                onChange={handleDescChange}
+                                                className={`relative flex items-center overflow-hidden w-full border-[2px] py-2 px-1 text-sm focus-within:border-primaryColor rounded-lg md:py-3 md:px-2 outline-none bg-transparent`}
+                                              />
+                                        </div> 
 
-                                      <span 
-                                        onClick={() => handleMenuClick(index)}
-                                        className='absolute -top-1 -right-1 cursor-pointer shadow-sm shadow-secondaryLight rounded-full w-4 h-4 flex justify-center items-center font-medium pb-[2px] text-white bg-red-500'
-                                      >
-                                        x
-                                      </span>
+                                        <div className='w-full flex justify-between items-center border-[2px] py-2 px-2 rounded-lg gap-2'>
+                                          <label className='text-[.95em] text-primaryColor'>Date</label>
+                                          <DatePicker 
+                                            onChange={DateChange}
+                                            className="w-20 lg:w-full  rounded-xl border border-gray-200 bg-white py-2 px-2 text-[12px] md:text-sm  outline-none focus:outline-none hover:border-primaryColor"
+                                          />
+                                        </div>
+
+                                        <button
+                                          type="button"
+                                          onClick={() => closeModal(index)}
+                                          className="absolute -bottom-[3.2rem] right-[44%] inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-secondaryColor text-sm text-white shadow-lg transition-all hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white"
+                                        >
+                                          <Cancel className='w-3.5 h-3.5 fill-[#ffffff]'/>
+                                        </button>
+                                      </div>
+                                      <button
+                                      type="submit"
+                                      className="w-full origin-center rounded-3xl bg-primaryColor px-4 py-1 text-center text-base font-semibold capitalize text-white shadow-md transition duration-200 ease-in hover:bg-opacity-60 focus:outline-none  focus:ring-2 active:scale-95 md:px-10 md:py-3 lg:px-16"
+                                    >
+                                      <span className="w-full">Save Changes</span>
+                                    </button>
+                                    </motion.div>  
                                   </motion.div>
                                 )
-                              }
-                            </td>
+                              }                      
+                            </div>
                         </tr>
+                        
                     ))}
                 </tbody>
+                
             </table>
         </div>
 
