@@ -29,7 +29,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
             className='w-10 h-10'
             alt='logo'
           />
-          <span className='font-poppins font-medium text-lg text-blue-950'>Teachmate AI</span>
+          <span className='font-poppins font-medium text-lg text-purple-950'>Teachmate AI</span>
         </div>
 
         <div className='flex flex-col text-[14px] gap-2 mt-5 '>
@@ -49,7 +49,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
-              <HomeIcon size='sm' className={currentPage === 'home' ? '[&>path]:stroke-[#7B68EE]' : '[&>path]:stroke-[#464444]'} />
+              <HomeIcon size='md' className={currentPage === 'home' ? '[&>path]:stroke-[#7B68EE]' : '[&>path]:stroke-[#464444]'} />
               Dashboard
           </Link>
 
@@ -89,7 +89,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
-              <Play size='sm' className={`${currentPage === 'lessons' ? 'fill-[#7B68EE]' : 'fill-[#787777]'} `} />
+              <Play size='mid' className={`${currentPage === 'lessons' ? 'fill-[#7B68EE]' : 'fill-[#787777]'} `} />
               Lessons
           </Link>
 
@@ -109,7 +109,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
-              <Task size='sm' className={`${currentPage === 'task' ? 'fill-[#7B68EE]' : 'fill-[#464444]'} `}/>
+              <Task size='md' className={`${currentPage === 'task' ? 'fill-[#7B68EE]' : 'fill-[#464444]'} `}/>
               Tasks
           </Link>
 
@@ -129,14 +129,14 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
-              <Reward size='sm' className={`${currentPage === 'rewards' ? 'fill-[#7B68EE]' : 'fill-[#646262]'} `} />
+              <Reward size='md' className={`${currentPage === 'rewards' ? 'fill-[#7B68EE]' : 'fill-[#646262]'} `} />
               Rewards
           </Link>
 
           <Link
               href="#settings"
               onClick={() => handlePageChange('settings')}
-              className='flex gap-2 items-center px-2 py-3 rounded-lg font-barlow relative'
+              className='flex gap-2 items-center px-[6px] py-3 rounded-lg font-barlow relative'
               style={{
                   backgroundColor: currentPage === 'settings' ? '#D8BFFF' : 'transparent',
                   color: currentPage === 'settings' ? '#7B68EE' : '#000',
@@ -149,7 +149,7 @@ const Leftpane: React.FC<LeftMenuProps> = ({ setCurrentPage }) => {
                       style={{ backgroundColor: '#7B68EE' }}
                   ></span>
               )}
-              <Cog size='sm' className={`${currentPage === 'settings' ? 'stroke-[#7B68EE]' : 'stroke-[#464444]'} ml-[2px]`}/>
+              <Cog size='lg' className={`${currentPage === 'settings' ? 'stroke-[#7B68EE]' : 'stroke-[#464444]'} ml-[2px]`}/>
               Settings
           </Link>
 
