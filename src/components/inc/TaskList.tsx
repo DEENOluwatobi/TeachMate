@@ -1,6 +1,6 @@
 "use client"
 import { useTheme } from '@/context/ThemeContext';
-import { Board, DotMenu, Task } from '@/icons';
+import { Board, Delete, DotMenu, Edit, Mark, Task } from '@/icons';
 import React, {useState, useEffect, useRef} from 'react';
 // import { useSelector } from 'react-redux';
 // import { selectTasks } from '@/redux/tasksSlice';
@@ -117,9 +117,20 @@ const TaskList: React.FC = () => {
                               {
                                 menu === index && (
                                   <div key={task.id} className='flex flex-col justify-center items-start gap-2 absolute -top-20 right-0 border-[1px] bg-white shadow p-3 '>
-                                    <span>Edit</span>
-                                    <span>Delete</span>
-                                    <span>Mark</span>
+                                    <span className='flex justify-center items-center gap-1 cursor-pointer'>
+                                      <Edit className='fill-[#7a64f1]'/>
+                                      Edit
+                                    </span>
+
+                                    <span className='flex justify-center items-center gap-1 cursor-pointer'>
+                                      <Delete className='fill-[#f01a1a]'/>
+                                      Delete
+                                    </span>
+
+                                    <span className='flex justify-center items-center gap-1 cursor-pointer'>
+                                      <Mark className='fill-[#53ce0b]'/>
+                                      Mark
+                                    </span>
 
                                     <span 
                                       onClick={() => handleMenuClick(index)}
