@@ -250,12 +250,12 @@ const TaskList: React.FC = () => {
                                           Edit
                                         </span>
 
-                                        <span className='flex justify-start items-center gap-2 cursor-pointer bg-gray-100 hover:bg-gray-200 duration-300 transition-all ease-in-out w-full rounded-md p-1'>
+                                        <span onClick={() => openDeleteModal(index)} className='flex justify-start items-center gap-2 cursor-pointer bg-gray-100 hover:bg-gray-200 duration-300 transition-all ease-in-out w-full rounded-md p-1'>
                                           <Delete className='fill-[#f01a1a]'/>
                                           Delete
                                         </span>
 
-                                        <span className='flex justify-start items-center gap-2 cursor-pointer bg-gray-100 hover:bg-gray-200 duration-300 transition-all ease-in-out w-full rounded-md p-1'>
+                                        <span onClick={() => openMarkModal(index)} className='flex justify-start items-center gap-2 cursor-pointer bg-gray-100 hover:bg-gray-200 duration-300 transition-all ease-in-out w-full rounded-md p-1'>
                                           <Mark className='fill-[#53ce0b]'/>
                                           Mark
                                         </span>
@@ -286,7 +286,7 @@ const TaskList: React.FC = () => {
                                       initial={{opacity: 0, translateX: '-50%', translateY: '-30%' }}
                                       animate={{opacity: 1, translateX: '-50%', translateY: '-50%' }}
                                       exit={{ opacity: 0, translateX: '-50%', translateY: '-30%' }}
-                                      className="relative -bottom-[250px] md:top-1/2 bg-white p-2 rounded-md left-1/2 w-[22rem] md:max-w-lg -translate-x-1/2 -translate-y-1/2"
+                                      className="relative -bottom-[250px] md:top-1/2 bg-white p-2 rounded-md left-1/2 w-[22rem] md:max-w-lg -translate-x-1/2 -translate-y-1/2 flex gap-2 flex-col"
                                       onClick={(e) => e.stopPropagation()}
                                     >
                                       <div className='flex items-center gap-1'>
@@ -294,7 +294,7 @@ const TaskList: React.FC = () => {
                                         <span className='text-secondaryColor font-barlow text-[1em] font-medium'>Edit Task</span>
                                       </div>
 
-                                      <div className='p-2 border-[1px] border-secondaryLight border-opacity-50 rounded-lg flex-col flex gap-2'>
+                                      <div className='p-2 border-[1px] border-secondaryLight border-opacity-50 rounded-lg flex-col flex gap-2 '>
                                         <div className="poll-label relative">
                                             <input
                                                 id="title"
@@ -335,6 +335,53 @@ const TaskList: React.FC = () => {
                                       className="w-full origin-center rounded-3xl bg-primaryColor px-4 py-1 text-center text-base font-semibold capitalize text-white shadow-md transition duration-200 ease-in hover:bg-opacity-60 focus:outline-none  focus:ring-2 active:scale-95 md:px-10 md:py-3 lg:px-16"
                                     >
                                       <span className="w-full">Save Changes</span>
+                                    </button>
+                                    </motion.div>  
+                                  </motion.div>
+                                )
+                              }                      
+                            </div>
+
+                            <div>
+                              {
+                                deleteTask[index] && (
+                                  <motion.div
+                                    className="fixed top-0 left-0 z-[110] h-full w-full overflow-y-auto overflow-x-hidden bg-gray-800/30 "
+                                    onClick={() => closeDeleteModal(index)}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                  >
+                                    <motion.div
+                                      initial={{opacity: 0, translateX: '-50%', translateY: '-30%' }}
+                                      animate={{opacity: 1, translateX: '-50%', translateY: '-50%' }}
+                                      exit={{ opacity: 0, translateX: '-50%', translateY: '-30%' }}
+                                      className="relative -bottom-[250px] md:top-1/2 bg-white p-2 rounded-md left-1/2 w-[22rem] md:max-w-lg -translate-x-1/2 -translate-y-1/2 flex gap-2 flex-col"
+                                      onClick={(e) => e.stopPropagation()}
+                                    >
+                                      <div className='flex items-center gap-1'>
+                                        <Delete className='w-8 h-8 fill-primaryColor'/>
+                                        <span className='text-secondaryColor font-barlow text-[1em] font-medium'>Delete Task</span>
+                                      </div>
+
+                                      <div className='p-2 border-[1px] border-secondaryLight border-opacity-50 rounded-lg flex-col flex gap-2'>
+                                        <span>
+                                          Are you sure you want to delete the task - <span className='text-[1em] font-bold text-primaryColor'>{task.title}</span>?
+                                        </span>
+
+                                        <button
+                                          type="button"
+                                          onClick={() => closeDeleteModal(index)}
+                                          className="absolute -bottom-[3.2rem] right-[44%] inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-secondaryColor text-sm text-white shadow-lg transition-all hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white"
+                                        >
+                                          <Cancel className='w-3.5 h-3.5 fill-[#ffffff]'/>
+                                        </button>
+                                      </div>
+                                      <button
+                                      type="submit"
+                                      className="w-full origin-center rounded-3xl bg-primaryColor px-4 py-1 text-center text-base font-semibold capitalize text-white shadow-md transition duration-200 ease-in hover:bg-opacity-60 focus:outline-none  focus:ring-2 active:scale-95 md:px-10 md:py-3 lg:px-16"
+                                    >
+                                      <span className="w-full">Delete Task</span>
                                     </button>
                                     </motion.div>  
                                   </motion.div>
