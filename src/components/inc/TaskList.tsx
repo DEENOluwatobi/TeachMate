@@ -1,7 +1,8 @@
 "use client"
 import { useTheme } from '@/context/ThemeContext';
-import { Board, Delete, DotMenu, Edit, Mark, Task } from '@/icons';
+import { Board, Delete, DotMenu, Edit, Mark, PlusCircle, Task } from '@/icons';
 import React, {useState, useEffect, useRef} from 'react';
+import Modal from '../modals/Modal';
 // import { useSelector } from 'react-redux';
 // import { selectTasks } from '@/redux/tasksSlice';
 
@@ -18,25 +19,12 @@ const TaskList: React.FC = () => {
     const { theme } = useTheme();
     const menuRef = useRef<HTMLDivElement | null>(null);
     const [ menu, setMenu ] =  useState<number | null>(null);
+    const [ addTask, setAddTask ] = useState(false);
 
     const handleMenuClick = (index: number) => {
       setMenu(index === menu ? null : index);
     };
     
-    // CLOSE MENU ON OUT CLICK
-    useEffect(() => {
-      const handleClickOutside = (event: MouseEvent) => {
-        if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-          setMenu(null);
-        }
-      };
-  
-      document.addEventListener('click', handleClickOutside);
-  
-      return () => {
-        document.removeEventListener('click', handleClickOutside);
-      };
-    }, []);
 
     const tasks: Task[] = [
       {
@@ -81,12 +69,34 @@ const TaskList: React.FC = () => {
 
   return (
     <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'} h-full w-full flex-col p-2 flex gap-2 rounded-md`}>
+      <div className='w-full flex justify-between items-center'>
         <div className='flex justify-start items-center gap-1 shadow-sm shadow-gray-300 rounded-md p-2'>
-          <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Task className='fill-[#7a64f1]'/></div>
+            <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Task className='fill-[#7a64f1]'/></div>
             <div className='flex flex-col leading-4'>
               <span className='font-poppins text-[1em] mt-1 font-medium text-secondaryColor'>Tasks List</span>
             </div>
         </div>
+
+        <div onClick={()=>setAddTask(!addTask)} className='h-full flex justify-center gap-1 bg-secondaryLight bg-opacity-50 items-center shadow-sm shadow-gray-300 rounded-md p-2 cursor-pointer'>
+            <span className='font-barlow font-medium text-[.9em] text-gray-500 '>
+                Add task
+            </span>
+            <div className="inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                <PlusCircle className='w-5 h-5'/>
+            </div>
+        {/* {
+          addTask && (
+            <Modal open={addTask} onClose={()=>setAddTask(!addTask)}>
+              <div>
+                Add Task
+              </div>
+            </Modal>
+          )
+        } */}
+        </div>
+
+
+      </div>
         
         <div className='h-full w-full'>
             <table className='w-full'>
