@@ -17,7 +17,7 @@ const Rightpane: React.FC<RightPaneProps> = ({ children }) => {
           {children}
         </div>
 
-        <div className='hidden lg:col-span-1 h-full rounded-md'>
+        <div className='col-span-1 h-[calc(100vh-5.5em)] overflow-y-hidden rounded-md'>
           <SideNav/>
         </div>
       </div>

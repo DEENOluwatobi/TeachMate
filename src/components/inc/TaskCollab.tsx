@@ -48,7 +48,7 @@ const TaskCollab: React.FC = () => {
   ];
 
   return (
-    <div className='grid grid-cols-3  gap-2'>
+    <div className='grid grid-cols-1 lg:grid-cols-3  gap-2'>
       {collabs.map((collab, index) => (
         <div key={index}>
             <div className='w-full p-2 bg-white rounded-lg border border-primaryLight'>
