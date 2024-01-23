@@ -296,3 +296,9 @@ const sizes = {
     )
   }
 
+  export const MenuSquare = ({ size = "original", className}: iconProp) => {
+    return(
+      <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 261" className={`${sizes[size]} ${className ? className : ""}`} fill="#7B68EE" stroke="#ffffff" width="20" height="20" viewBox="0 0 48 48" id="menu"><rect width="23.5" height="9.29" x="23.5" fill="#7B68EE" rx="4.64"></rect><rect width="9.41" height="9.29" x=".28" fill="#7B68EE" rx="4.64"></rect><rect width="9.41" height="9.29" x="37.52" y="37.59" fill="#7B68EE" rx="4.64"></rect><rect width="23.5" height="9.29" x=".47" y="37.59" fill="#7B68EE" rx="4.64"></rect><rect width="46.99" height="9.29" y="18.85" fill="#7B68EE" rx="4.64"></rect></svg>
+    )
+  }
+

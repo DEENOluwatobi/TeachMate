@@ -35,11 +35,11 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className={`${theme === 'dark' ? 'dark-gradient-bg' : 'gradient-bg'} w-full h-full`}>
-        <div className={` max-w-[1400px] mx-auto grid grid-cols-6 h-screen w-full p-2 gap-2`}>
-            <div className='col-span-1'>
+        <div className={` max-w-[1400px] mx-auto grid grid-cols-6 h-screen w-full p-1 md:p-2 gap-1 md:gap-2`}>
+            <div className='hidden md:flex col-span-1'>
                 <Leftpane setCurrentPage={setCurrentPage}/>
             </div>
-            <div className='col-span-5'>
+            <div className='col-span-6 md:col-span-5'>
                 <Rightpane>{renderPage()}</Rightpane>
             </div>
         </div>
