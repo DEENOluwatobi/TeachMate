@@ -21,26 +21,26 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
 
   return (
     <div className=' flex flex-col gap-2'>
-      <div className='grid grid-cols-2 gap-2'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-2'>
         <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'} w-full h-[20em] gap-2 flex flex-col justify-center items-center p-2 bg-gray-100 rounded-md overflow-hidden`}>
           
           <div className='w-full flex justify-between items-center px-2'>
             <div className='flex justify-center items-center gap-1 shadow-sm shadow-gray-300 rounded-md p-2'>
               <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Board className='[&>g]:stroke-[#7a64f1]'/></div>
               <div className='flex flex-col leading-4'>
-                <span className='font-poppins text-[1em] mt-1 font-medium text-secondaryColor'>Activities</span>
-                <span className='text-[.7em] font-poppins text-gray-600'>Activity details</span>
+                <span className='font-poppins text-[.8em] md:text-[1em] mt-1 font-medium text-secondaryColor'>Activities</span>
+                <span className='text-[.6em] md:text-[.7em] font-poppins text-gray-600'>Activity details</span>
               </div>
             </div>
 
             <div className='h-full flex justify-center items-center shadow-sm shadow-gray-300 rounded-md p-2'>
-              <select className='appearance-none bg-transparent border-none font-barlow font-medium text-[.9em] text-gray-500 outline-none '>
+              <select className='appearance-none bg-transparent border-none font-barlow font-medium text-[.7em] md:text-[.9em] text-gray-500 outline-none '>
                 <option>This week</option>
                 <option>1 week ago</option>
                 <option>2 weeks ago</option>
               </select>
               <div className="inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                <ArrowDown className='w-5 h-5 mt-1'/>
+                <ArrowDown className='w-5 h-5 md:mt-1'/>
               </div>
             </div>
           </div>
@@ -53,13 +53,13 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
             <div className='flex justify-center items-center gap-1 shadow-sm shadow-gray-300 rounded-md p-2'>
               <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Calender size='mid' className='[&>g]:stroke-[#7a64f1]'/></div>
               <div className='flex flex-col leading-4'>
-                <span className='font-poppins text-[1em] mt-1 font-medium text-secondaryColor'>Progress Task</span>
-                <span className='text-[.7em] font-poppins text-gray-600'>Progress details</span>
+                <span className='font-poppins text-[.8em] md:text-[1em] mt-1 font-medium text-secondaryColor'>Progress Task</span>
+                <span className='text-[.6em] md:text-[.7em] font-poppins text-gray-600'>Progress details</span>
               </div>
             </div>
 
             <Link href="#task" onClick={() => handlePageChange('task')} className='h-full flex justify-center gap-1 bg-blue-100 items-center shadow-sm shadow-gray-300 rounded-md p-2'>
-              <span className='font-barlow font-medium text-[.9em] text-gray-500 '>
+              <span className='font-barlow font-medium text-[.7em] md:text-[.9em] text-gray-500 '>
                 Add task
               </span>
               <div className="inset-y-0 right-0 flex items-center pr-2 pointer-events-none">

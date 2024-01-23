@@ -12,7 +12,7 @@ const Rightpane: React.FC<RightPaneProps> = ({ children }) => {
       <DashNav/>
 
       <div className='grid grid-cols-4 h-full gap-2'>
-        <div className='col-span-4 md:col-span-3 h-[calc(100vh-5.5em)] overflow-y-scroll rounded-md scroll-smooth'>
+        <div className='col-span-4 md:col-span-3 h-[calc(100vh-6em)] md:h-[calc(100vh-5.5em)] overflow-y-scroll rounded-md scroll-smooth'>
           {children}
         </div>
 
