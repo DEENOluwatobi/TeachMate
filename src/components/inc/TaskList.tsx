@@ -213,7 +213,7 @@ const TaskList: React.FC = () => {
         <div className='h-full w-full'>
             <table className='w-full'>
                 <thead>
-                    <tr className='text-[.8em] text-primaryColor bg-purple-200 py-4 rounded-sm font-medium'>
+                    <tr className='text-[.5em] md:text-[.8em] text-primaryColor bg-purple-200 py-4 rounded-sm font-medium'>
                         <th>S/N</th>
                         <th>Title</th>
                         <th>Description</th>
@@ -224,7 +224,7 @@ const TaskList: React.FC = () => {
                 </thead>
                 <tbody>
                     {tasks.map((task, index) => (
-                        <tr key={task.id} className={`${task.status === 'pending' ? 'bg-gray-100' : ''} border-b-[1px] border-[#d1d1d1df] text-gray-500 text-[.9em] font-barlow`}>
+                        <tr key={task.id} className={`${task.status === 'pending' ? 'bg-gray-100' : ''} border-b-[1px] border-[#d1d1d1df] text-gray-500 text-[.6em] md:text-[.9em] font-barlow`}>
                             <td >{index + 1}</td>
                             <td>{task.title}</td>
                             <td>{task.description}</td>
