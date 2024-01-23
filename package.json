@@ -23,6 +23,7 @@
     "recharts": "^2.10.4",
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "uuid": "^9.0.1",
     "uuidv4": "^6.2.13"
   },

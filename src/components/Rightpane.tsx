@@ -10,14 +10,14 @@ const Rightpane: React.FC<RightPaneProps> = ({ children }) => {
   return (
     <div className='relative flex flex-col gap-1 md:gap-2 h-full '>
       <DashNav/>
+     
+      <div className='flex h-full gap-2 w-full'>
 
-      <div className='lg:grid lg:grid-cols-4 h-full gap-2'>
-
-        <div className='col-span-4 lg:col-span-3 h-[calc(100vh-5.5em)] overflow-y-scroll rounded-md scroll-smooth'>
+        <div className='w-full lg:w-[75%] h-[calc(100vh-5.5em)] overflow-y-scroll rounded-md scroll-smooth'>
           {children}
         </div>
 
-        <div className='col-span-1 h-[calc(100vh-5.5em)] overflow-y-hidden rounded-md'>
+        <div className='hidden lg:flex lg:w-[25%] h-[calc(100vh-5.5em)] overflow-y-scroll scrollbar-hide rounded-md'>
           <SideNav/>
         </div>
       </div>
