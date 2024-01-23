@@ -29,7 +29,7 @@ const Collab: React.FC = () => {
 
     {
       image: student,
-      title: 'Figma Community Project',
+      title: 'Figma Project',
       category: 'UI Kit - Collaborate',
       daysUsed: 8,
       totalDays: 25,
@@ -58,10 +58,10 @@ const Collab: React.FC = () => {
   ];
 
   return (
-    <div className='grid grid-cols-2 px-4 gap-6'>
+    <div className='grid grid-cols-1 sml:grid-cols-2 px-4 gap-6'>
       {collabs.map((collab, index) => (
         <div key={index}>
-            <div className='w-full p-8 bg-slate-200 rounded-lg border border-primaryLight'>
+            <div className='w-full p-2 md:p-8 bg-slate-200 rounded-lg border border-primaryLight'>
                 <div className='h-[13em] mb-2'>
                     <Image
                         src={collab.image}
@@ -74,12 +74,12 @@ const Collab: React.FC = () => {
 
                 <div className='flex justify-between items-center gap-2'>
                     <div className='flex flex-col leading-5'>
-                        <span className='font-poppins text-[1em] mt-1 font-medium text-secondaryColor'>{collab.title}</span>
+                        <span className='font-poppins text-[.8em] md:text-[1em] mt-1 font-medium text-secondaryColor'>{collab.title}</span>
                         <span className='text-[.8em] font-poppins text-gray-600'>{collab.category}</span>
                     </div>
 
                     <div className='cursor-pointer'>
-                        <DotMenu />
+                        <DotMenu size='mid'/>
                     </div>
                 </div>
 

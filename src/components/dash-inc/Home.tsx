@@ -20,7 +20,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
   };
 
   return (
-    <div className=' flex flex-col gap-2'>
+    <div className=' flex flex-col md:gap-2'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-2'>
         <div className={`${theme === 'dark' ? 'bg-gray-300 opacity-80 backdrop-blur-sm border-[1px] border-white' : 'bg-gray-100'} w-full h-[20em] gap-2 flex flex-col justify-center items-center p-2 bg-gray-100 rounded-md overflow-hidden`}>
           
@@ -76,7 +76,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                 <FileUncomplete className='[&>path]:fill-[#3d28b5] w-10 h-10' size='lg'/>
               </div>
               <div className='flex flex-col justify-center items-center text-white font-barlow'>
-                <span className='font-thin text-[.9em]'>Total tasks</span>
+                <span className='font-thin text-[.6em] md:text-[.9em]'>Total tasks</span>
                 <span className='font-medium text-[2em]'>12</span>
               </div>
             </div>
@@ -86,7 +86,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                 <FileAssign className='[&>path]:fill-[#3d28b5] w-10 h-10' size='lg'/>
               </div>
               <div className='flex flex-col justify-center items-center text-white font-barlow'>
-                <span className='font-thin text-[.9em]'>Assigned</span>
+                <span className='font-thin text-[.6em] md:text-[.9em]'>Assigned</span>
                 <span className='font-medium text-[2em]'>8</span>
               </div>
             </div>
@@ -96,7 +96,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                 <FileComplete className='[&>path]:fill-[#3d28b5] w-10 h-10' size='lg'/>
               </div>
               <div className='flex flex-col justify-center items-center text-white font-barlow'>
-                <span className='font-thin text-[.9em]'>Completed</span>
+                <span className='font-thin text-[.6em] md:text-[.9em]'>Completed</span>
                 <span className='font-medium text-[2em]'>4</span>
               </div>
             </div>
@@ -112,8 +112,8 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
             <div className='flex justify-center items-center gap-1 shadow-sm shadow-gray-300 rounded-md p-2'>
               <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Team size='mid' className='fill-[#7a64f1]'/></div>
               <div className='flex flex-col leading-4'>
-                <span className='font-poppins text-[1em] mt-1 font-medium text-secondaryColor'>Task Collaboration</span>
-                <span className='text-[.7em] font-poppins text-gray-600'>Team&apos;s work</span>
+                <span className='font-poppins text-[.8em] md:text-[1em] mt-1 font-medium text-secondaryColor'>Task Collaboration</span>
+                <span className='text-[.6em] md:text-[.7em] font-poppins text-gray-600'>Team&apos;s work</span>
               </div>
             </div>
 
@@ -128,7 +128,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           
         </div>
 
-        <div className='bg-white bg-opacity-60 rounded-lg shadow-md w-full h-[2px] '></div>
+        <div className='bg-white bg-opacity-60 rounded-lg shadow-md w-full h-[2px] hidden md:flex'></div>
 
         <div className='w-full'>
             <Collab/>
