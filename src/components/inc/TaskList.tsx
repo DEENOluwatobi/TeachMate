@@ -143,12 +143,12 @@ const TaskList: React.FC = () => {
         <div className='flex justify-start items-center gap-1 shadow-sm shadow-gray-300 rounded-md p-2'>
             <div className='w-9 h-9 border-[1px] border-primaryColor rounded-md flex justify-center items-center'><Task className='fill-[#7a64f1]'/></div>
             <div className='flex flex-col leading-4'>
-              <span className='font-poppins text-[1em] mt-1 font-medium text-secondaryColor'>Tasks List</span>
+              <span className='font-poppins text-[.8em] md:text-[1em] mt-1 font-medium text-secondaryColor'>Tasks List</span>
             </div>
         </div>
 
-        <div onClick={()=>setAddTask(!addTask)} className='h-full flex justify-center gap-1 bg-primaryLight bg-opacity-60 items-center shadow-sm shadow-gray-300 rounded-md p-2 cursor-pointer'>
-            <span className='font-barlow font-medium text-[.9em] text-gray-500 '>
+        <div onClick={()=>setAddTask(!addTask)} className='h-[2em] md:h-full flex justify-center gap-1 bg-primaryLight bg-opacity-60 items-center shadow-sm shadow-gray-300 rounded-md p-2 cursor-pointer'>
+            <span className='font-barlow font-medium text-[.7em] md:text-[.9em] text-gray-500 '>
                 Add task
             </span>
             <div className="inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
